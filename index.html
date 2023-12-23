@@ -415,126 +415,103 @@
             <h2 class="title">My Projects</h2>
 
 
-
-<div class="itmen">
-  <input type="radio" name="position" checked />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <main id="carousel">
-    <div class="item"><img src="images/sale1.jpg"></div>
-    <div class="item"><img src="images/sale2.jpg"></div>
-    <div class="item"><img src="images/sale3.jpg"></div>
-    <div class="item"><img src="images/sale4.jpg"></div>
-    <div class="item"><img src="images/sale5.jpg"></div>
-    <main>
+<div class="container">
+  <div class="carousel">
+    <div class="carousel__face"><span>This is something</span></div>
+    <div class="carousel__face"><span>Very special</span></div>
+    <div class="carousel__face"><span>Special is the key</span></div>
+    <div class="carousel__face"><span>For you</span></div>
+    <div class="carousel__face"><span>Just give it</span></div>
+    <div class="carousel__face"><span>A try</span></div>
+    <div class="carousel__face"><span>And see</span></div>
+    <div class="carousel__face"><span>How IT Works</span></div>
+    <div class="carousel__face"><span>Woow</span></div>
+  </div>
 </div>
 
 <style>
 
-.itmen {
-  height: 600px;
+
+body {
   margin: 0;
-  display: grid;
-  grid-template-rows: 500px 100px;
-  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
-  align-items: center;
-  justify-items: center;
+  background: lightgray;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fefefe;
+}
+.container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
 }
 
-main#carousel {
-  grid-row: 1 / 2;
-  grid-column: 1 / 8;
-  width: 100vw;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 600px;
-  --items: 5;
-  --middle: 3;
-  --position: 1;
-  pointer-events: none;
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
 }
-
-div.item {
+.carousel__face { 
   position: absolute;
   width: 300px;
-  height: 400px;
-  background-color: coral;
-  --r: calc(var(--position) - var(--offset));
-  --abs: max(calc(var(--r) * -1), var(--r));
-  transition: all 0.25s linear;
-  transform: rotateY(calc(-10deg * var(--r)))
-    translateX(calc(-300px * var(--r)));
-  z-index: calc((var(--position) - var(--abs)));
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+  display: flex;
 }
 
-div.item:nth-of-type(1) {
-  --offset: 1;
-  background-color: #90f1ef;
-}
-div.item:nth-of-type(2) {
-  --offset: 2;
-  background-color: #ff70a6;
-}
-div.item:nth-of-type(3) {
-  --offset: 3;
-  background-color: #ff9770;
-}
-div.item:nth-of-type(4) {
-  --offset: 4;
-  background-color: #ffd670;
-}
-div.item:nth-of-type(5) {
-  --offset: 5;
-  background-color: #e9ff70;
+span {
+  margin: auto;
+  font-size: 2rem;
 }
 
-input:nth-of-type(1) {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(1):checked ~ main#carousel {
-  --position: 1;
+
+.carousel__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
 }
 
-input:nth-of-type(2) {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(2):checked ~ main#carousel {
-  --position: 2;
-}
 
-input:nth-of-type(3) {
-  grid-column: 4 /5;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(3):checked ~ main#carousel {
-  --position: 3;
-}
-
-input:nth-of-type(4) {
-  grid-column: 5 / 6;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(4):checked ~ main#carousel {
-  --position: 4;
-}
-
-input:nth-of-type(5) {
-  grid-column: 6 / 7;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(5):checked ~ main#carousel {
-  --position: 5;
-}
 </style>
-
         </div>
     </section>
 
