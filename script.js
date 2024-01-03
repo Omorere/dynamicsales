@@ -76,7 +76,7 @@ $(document).ready(function(){
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   $(document).ready(function() {
-    const apiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your API key
+    const apiKey = 'org-BCLOYKqCYMdDxt0JTbxAuCdQ'; // Replace with your API key
 
     // Function to send a message to ChatGPT
     function sendMessage(message) {
